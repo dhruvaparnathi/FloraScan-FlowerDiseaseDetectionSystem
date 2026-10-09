@@ -29,7 +29,7 @@
 - ☁️ Store scan history with cloud CDN image hosting
 - 👤 Support multi-user authentication with JWT
 
-Trained on **3,900 images** with **96.67% disease detection accuracy** and **96.15% species classification accuracy**.
+Trained on **3,900 images** with **90.67% disease detection accuracy** and **96.15% species classification accuracy**.
 
 ---
 
@@ -129,7 +129,7 @@ Trained on **3,900 images** with **96.67% disease detection accuracy** and **96.
 Both models share the same backbone design:
 
 ```
-Input (160 × 160 × 3)
+Input (224 × 224 × 3)
        │
 Data Augmentation (RandomFlip · RandomRotation ±15° · RandomZoom ±10%)
        │
@@ -160,9 +160,9 @@ Binary Crossentropy    Sparse Categorical CE
 
 | Metric | Healthy | Diseased |
 |---|---|---|
-| Precision | 0.95 | 0.99 |
-| Recall | 0.99 | 0.94 |
-| F1-Score | 0.97 | 0.96 |
+| Precision | 0.90 | 0.91 |
+| Recall | 0.90 | 0.89 |
+| F1-Score | 0.91 | 0.91 |
 
 **Overall Validation Accuracy: `96.67%`** (Validation set: 780 images)
 
@@ -317,8 +317,8 @@ curl -X POST http://localhost:5000/image/upload \
 {
   "species": "Rose",
   "health": "Diseased",
-  "species_confidence": 0.9985,
-  "health_confidence": 0.9421,
+  "species_confidence": 0.9885,
+  "health_confidence": 0.9021,
   "image_url": "https://ik.imagekit.io/...",
   "treatment_plan": {
     "title": "PATHOGEN ALERT: FOLIAR FUNGAL PROTOCOL",
