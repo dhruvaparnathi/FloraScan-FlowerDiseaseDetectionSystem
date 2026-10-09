@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #D82F2F;
+  --color-brand-black: #111111;
+  --color-brand-dark: #0A0A0A;
+  --color-brand-cream: #FBF8F3;
+  
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --animate-marquee: marquee 80s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 80s linear infinite;
+  --animate-scan: scan 3s ease-in-out infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+  }
+  @keyframes scan {
+    0%, 100% { top: 0%; opacity: 0.8; }
+    50% { top: 100%; opacity: 0.8; }
+  }
+}
+
+/* Core dynamic theme color helper classes */
+.text-theme-text {
+  color: var(--text-color) !important;
+}
+.text-theme-muted {
+  color: var(--text-muted) !important;
+}
+.text-theme-dim {
+  color: var(--text-dim) !important;
+}
+.bg-theme-card {
+  background-color: var(--bg-card) !important;
+}
+.bg-theme-card-hover:hover {
+  background-color: var(--bg-card-hover) !important;
+}
+.bg-theme-tag {
+  background-color: var(--bg-active-tag) !important;
+}
+
+.border-state-healthy {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+.bg-state-healthy {
+  background-color: var(--state-healthy-bg) !important;
+}
+.text-state-healthy {
+  color: var(--state-healthy-text) !important;
+}
+
+.border-state-diseased {
+  border-color: rgba(216, 47, 47, 0.3) !important;
+}
+.bg-state-diseased {
+  background-color: var(--state-diseased-bg) !important;
+}
+.text-state-diseased {
+  color: var(--state-diseased-text) !important;
+}
+
+.border-state-warning {
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+.bg-state-warning {
+  background-color: var(--state-warning-bg) !important;
+}
+.text-state-warning {
+  color: var(--state-warning-text) !important;
+}
+
+/* Custom theme system matching Pangram Pangram specimen site */
+:root {
+  --bg-color: #FBF8F3;
+  --text-color: #111111;
+  --border-color: rgba(17, 17, 17, 0.1);
+  --accent-color: #D82F2F;
+  --accent-text: #FFFFFF;
+  
+  --text-muted: rgba(17, 17, 17, 0.6);
+  --text-dim: rgba(17, 17, 17, 0.4);
+  --bg-card: rgba(17, 17, 17, 0.02);
+  --bg-card-hover: rgba(17, 17, 17, 0.04);
+  --bg-active-tag: rgba(17, 17, 17, 0.05);
+
+  --state-healthy-bg: rgba(16, 185, 129, 0.1);
+  --state-healthy-text: #10B981;
+  --state-diseased-bg: rgba(216, 47, 47, 0.1);
+  --state-diseased-text: #D82F2F;
+  --state-warning-bg: rgba(245, 158, 11, 0.1);
+  --state-warning-text: #D97706;
+
+  font-family: var(--font-display);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-x: hidden;
+}
+
+/* Theme states */
+.theme-cream {
+  --bg-color: #FBF8F3;
+  --text-color: #111111;
+  --border-color: rgba(17, 17, 17, 0.1);
+  --accent-color: #D82F2F;
+  --accent-text: #FFFFFF;
+  
+  --text-muted: rgba(17, 17, 17, 0.6);
+  --text-dim: rgba(17, 17, 17, 0.4);
+  --bg-card: rgba(17, 17, 17, 0.02);
+  --bg-card-hover: rgba(17, 17, 17, 0.04);
+  --bg-active-tag: rgba(17, 17, 17, 0.05);
+
+  --state-healthy-bg: rgba(16, 185, 129, 0.1);
+  --state-healthy-text: #10B981;
+  --state-diseased-bg: rgba(216, 47, 47, 0.1);
+  --state-diseased-text: #D82F2F;
+  --state-warning-bg: rgba(245, 158, 11, 0.1);
+  --state-warning-text: #D97706;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.theme-onyx {
+  --bg-color: #111111;
+  --text-color: #FBF8F3;
+  --border-color: rgba(251, 248, 243, 0.15);
+  --accent-color: #D82F2F;
+  --accent-text: #FFFFFF;
+  color-scheme: dark;
+
+  --text-muted: rgba(251, 248, 243, 0.6);
+  --text-dim: rgba(251, 248, 243, 0.45);
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --bg-active-tag: rgba(255, 255, 255, 0.08);
+
+  --state-healthy-bg: rgba(16, 185, 129, 0.15);
+  --state-healthy-text: #34D399;
+  --state-diseased-bg: rgba(248, 113, 113, 0.15);
+  --state-diseased-text: #F87171;
+  --state-warning-bg: rgba(251, 191, 36, 0.15);
+  --state-warning-text: #FBBF24;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.theme-crimson {
+  --bg-color: #D82F2F;
+  --text-color: #FFFFFF;
+  --border-color: rgba(255, 255, 255, 0.25);
+  --accent-color: #111111;
+  --accent-text: #FFFFFF;
+  color-scheme: dark;
+
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --text-dim: rgba(255, 255, 255, 0.45);
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --bg-card-hover: rgba(255, 255, 255, 0.15);
+  --bg-active-tag: rgba(17, 17, 17, 0.2);
+
+  --state-healthy-bg: rgba(255, 255, 255, 0.2);
+  --state-healthy-text: #FFFFFF;
+  --state-diseased-bg: #111111;
+  --state-diseased-text: #FFFFFF;
+  --state-warning-bg: #111111;
+  --state-warning-text: #FBBF24;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Custom typography weights & features */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+/* Monospace fonts for raw technical specifications */
+.tech-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
+/* Swiss layout dividers */
+.swiss-border-b {
+  border-bottom: 1px solid var(--border-color);
+}
+.swiss-border-t {
+  border-top: 1px solid var(--border-color);
+}
+.swiss-border-r {
+  border-right: 1px solid var(--border-color);
+}
+.swiss-border-l {
+  border-left: 1px solid var(--border-color);
+}
+.swiss-border {
+  border: 1px solid var(--border-color);
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 1024px) {
+  .custom-cursor-active, 
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Selection aesthetics */
+::selection {
+  background-color: var(--accent-color);
+  color: var(--accent-text);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color);
+}
+
+/* Lenis scroll requirement */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Utility Animations */
+.hover-reveal-parent:hover .hover-reveal-child {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+  color: transparent;
+}
+
+.text-stroke-black {
+  -webkit-text-stroke: 1px rgba(17, 17, 17, 0.4);
+  color: transparent;
+}
+
+.theme-cream .theme-text-stroke {
+  -webkit-text-stroke: 1px rgba(17, 17, 17, 0.45);
+  color: transparent;
+}
+
+.theme-onyx .theme-text-stroke,
+.theme-crimson .theme-text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.45);
+  color: transparent;
+}

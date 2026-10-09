@@ -1,0 +1,20 @@
+# Secrets
+.env
+.env.*
+
+# Logs
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ML models (large files)
+*.keras
+*.h5
+*.pkl
+*.pt
+*.onnx
+
+# Uploaded images (runtime data)
+images/

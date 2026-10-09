@@ -1,0 +1,21 @@
+{
+  "name": "flower-disease-detection-using-deep-learning",
+  "version": "1.0.0",
+  "description": "This project builds an **end-to-end flower recognition and disease detection system** using deep learning.  \r Given an input image, the model predicts:\r - **Flower species** (lily, rose, sunflower)\r - **Health status** (healthy or diseased)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singhsakshi123/Flower-Disease-Detection-using-Deep-Learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/singhsakshi123/Flower-Disease-Detection-using-Deep-Learning/issues"
+  },
+  "homepage": "https://github.com/singhsakshi123/Flower-Disease-Detection-using-Deep-Learning#readme"
+}

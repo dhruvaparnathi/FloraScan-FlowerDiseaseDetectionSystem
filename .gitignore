@@ -1,0 +1,79 @@
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environments
+.venv/
+.venv311/
+venv/
+env/
+ENV/
+
+# ─── Environment / Secrets ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── ML Models (large binary files — store on HuggingFace / Drive / DVC) ─────
+*.keras
+*.h5
+*.pkl
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.pb
+saved_model/
+
+# ─── Jupyter Notebooks outputs (keep .ipynb but strip outputs via nbstripout) ─
+.ipynb_checkpoints/
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+backend.log
+backend_stderr.log
+backend_stdout.log
+model_load_error.log
+
+# ─── Node / Frontend ──────────────────────────────────────────────────────────
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+Frontend/dist/
+
+# ─── Large Data / Archive Files ───────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.rar
+data/
+images/
+Backend/images/
+
+# ─── OS Files ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDE ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── PPT / Docs (optional — remove these lines if you want them tracked) ──────
+*.pptx
+*.docx
+*.pdf
